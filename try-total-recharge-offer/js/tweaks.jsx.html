@@ -1,0 +1,176 @@
+/*
+ * Tweaks panel — Total Recharge Ag Layout
+ * Surfaces ~6 useful controls in a floating panel:
+ *   – Accent colour (radio swatches)
+ *   – CTA colour (radio swatches)
+ *   – Card corner radius
+ *   – Badge style (gradient vs flat)
+ *   – Show/hide 60-day guarantee badge
+ *   – Show/hide payment-card row
+ *   – Headline text
+ *   – 3-jar badge label
+ *   – 6-jar badge label
+ */
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#AF63FF",
+  "ctaColor": "green",
+  "cardRadius": 10,
+  "badgeFlat": false,
+  "showGuarantee": true,
+  "showCards": true,
+  "headline": "Get Total Recharge",
+  "badge3": "Buy 2 Get 1 FREE",
+  "badge6": "Buy 3 Get 3 FREE"
+}/*EDITMODE-END*/;
+
+const CTA_PRESETS = {
+  green:  { bg: 'linear-gradient(180deg, #2ADC30 13.81%, #06C10C 100.17%)', shadow: 'rgba(6, 193, 12, 0.30)', shadowHi: 'rgba(6, 193, 12, 0.38)' },
+  purple: { bg: 'linear-gradient(180deg, #C6A0ED 0%, #8e29f6 100%)',         shadow: 'rgba(142, 41, 246, 0.30)', shadowHi: 'rgba(142, 41, 246, 0.40)' },
+  black:  { bg: 'linear-gradient(180deg, #2a2a2a 0%, #000000 100%)',         shadow: 'rgba(0, 0, 0, 0.30)',     shadowHi: 'rgba(0, 0, 0, 0.42)' },
+  orange: { bg: 'linear-gradient(180deg, #FFA45A 0%, #FF751F 100%)',         shadow: 'rgba(255, 117, 31, 0.30)', shadowHi: 'rgba(255, 117, 31, 0.40)' },
+};
+
+function applyTweaks(t) {
+  const root = document.documentElement;
+
+  // Accent colour — write CSS variables and patch the runtime
+  root.style.setProperty('--accent', t.accent);
+
+  // Override the static rules from style.css by injecting a sheet
+  let s = document.getElementById('__tweak_overrides');
+  if (!s) {
+    s = document.createElement('style');
+    s.id = '__tweak_overrides';
+    document.head.appendChild(s);
+  }
+
+  const cta = CTA_PRESETS[t.ctaColor] || CTA_PRESETS.green;
+  const badgeBg = t.badgeFlat
+    ? t.accent
+    : 'linear-gradient(180deg, #2ADC30 13.81%, #06C10C 100.17%)';
+  const badgeBestBg = t.badgeFlat
+    ? t.accent
+    : 'linear-gradient(180deg, #C6A0ED 0%, #8e29f6 100%)';
+
+  s.textContent = `
+    .option { border-radius: ${t.cardRadius}px !important; }
+    .option .badge { border-radius: 0 ${t.cardRadius}px 0 ${t.cardRadius}px !important; }
+    .option.active {
+      box-shadow: 0 0 0 2.5px ${t.accent}, 0 8px 24px ${hexA(t.accent, 0.18)} !important;
+      background: linear-gradient(180deg, #ffffff 0%, ${hexA(t.accent, 0.06)} 100%) !important;
+    }
+    .option:hover {
+      box-shadow: 0 0 0 1.5px ${t.accent}, 0 4px 12px ${hexA(t.accent, 0.10)} !important;
+    }
+    .option input:checked ~ .radio-helper .radio-custom { box-shadow: inset 0 0 0 1.5px ${t.accent} !important; }
+    .option input:checked ~ .radio-helper .radio-custom:before { background-color: ${t.accent} !important; }
+    .bar > div { background: linear-gradient(90deg, ${hexA(t.accent, 0.55)} 0%, ${t.accent} 100%) !important; }
+    .back-helper h2 .brand-word { color: ${t.accent} !important; }
+    .pricing > div span:first-child { color: ${t.accent} !important; }
+    .option .badge:not(.best) {
+      background: ${badgeBg} !important;
+      box-shadow: 0 4px 12px ${t.badgeFlat ? hexA(t.accent, 0.30) : 'rgba(6, 193, 12, 0.25)'} !important;
+    }
+    .option .badge.best {
+      background: ${badgeBestBg} !important;
+      box-shadow: 0 4px 12px ${t.badgeFlat ? hexA(t.accent, 0.30) : 'rgba(142, 41, 246, 0.30)'} !important;
+    }
+    .cta {
+      background: ${cta.bg} !important;
+      box-shadow: 0 10px 24px ${cta.shadow}, inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    }
+    .cta:hover {
+      box-shadow: 0 14px 30px ${cta.shadowHi}, inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    }
+    .guarantee-overlay { display: ${t.showGuarantee ? 'block' : 'none'} !important; }
+    .trust { display: ${t.showCards ? 'flex' : 'none'} !important; }
+  `;
+
+  // Headline + badge text — leave the "Get " prefix from designer's intent
+  document.querySelectorAll('.back-helper h2').forEach(h => {
+    h.innerHTML = escapeHtml(t.headline).replace(
+      /^(Get\s+)?(.*)$/i,
+      (_, get, rest) => `${get || ''}<span class="brand-word">${rest}</span>`
+    );
+  });
+
+  // Badge copy
+  document.querySelectorAll('.quantity .option').forEach(opt => {
+    const val = opt.querySelector('input[name="product-option"]')?.value;
+    const badge = opt.querySelector('.badge');
+    if (!badge) return;
+    if (val === '3') badge.textContent = t.badge3;
+    if (val === '6') badge.textContent = t.badge6;
+  });
+}
+
+function hexA(hex, a) {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.substring(0, 2), 16);
+  const g = parseInt(h.substring(2, 4), 16);
+  const b = parseInt(h.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function App() {
+  const { TweaksPanel, TweakSection, TweakColor, TweakRadio, TweakSlider, TweakToggle, TweakText, useTweaks } = window;
+  const [t, setT] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => { applyTweaks(t); }, [t]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Brand">
+        <TweakColor label="Accent colour"
+          value={t.accent}
+          onChange={(v) => setT('accent', v)}
+          options={['#AF63FF', '#235C7F', '#06C10C', '#FF751F', '#000000']} />
+        <TweakText label="Headline" value={t.headline} onChange={(v) => setT('headline', v)} />
+      </TweakSection>
+
+      <TweakSection label="CTA & cards">
+        <TweakRadio label="CTA colour"
+          value={t.ctaColor}
+          onChange={(v) => setT('ctaColor', v)}
+          options={[
+            { value: 'green', label: 'Green' },
+            { value: 'purple', label: 'Purple' },
+            { value: 'black', label: 'Black' },
+            { value: 'orange', label: 'Orange' },
+          ]} />
+        <TweakSlider label="Card corner radius"
+          value={t.cardRadius}
+          onChange={(v) => setT('cardRadius', v)}
+          min={0} max={28} step={1} unit="px" />
+        <TweakToggle label="Flat badge style (no gradient)" value={t.badgeFlat} onChange={(v) => setT('badgeFlat', v)} />
+      </TweakSection>
+
+      <TweakSection label="Badge labels (3 & 6 jars)">
+        <TweakText label="3-jar badge" value={t.badge3} onChange={(v) => setT('badge3', v)} />
+        <TweakText label="6-jar badge" value={t.badge6} onChange={(v) => setT('badge6', v)} />
+      </TweakSection>
+
+      <TweakSection label="Show / hide">
+        <TweakToggle label="60-day guarantee badge" value={t.showGuarantee} onChange={(v) => setT('showGuarantee', v)} />
+        <TweakToggle label="Payment cards row" value={t.showCards} onChange={(v) => setT('showCards', v)} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+const root = ReactDOM.createRoot(
+  Object.assign(document.body.appendChild(document.createElement('div')), { id: '__tweaks_root' })
+);
+root.render(<App />);
+
+// Apply defaults on first load (in case tweaks panel is never opened)
+applyTweaks(TWEAK_DEFAULTS);
