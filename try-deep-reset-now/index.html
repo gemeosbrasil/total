@@ -1,0 +1,531 @@
+<html lang="en">
+
+<head><base href="/try-deep-reset/">
+    <meta charset="UTF-8">
+    <title>Male Vital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq { background: #F6F6F6 !important; padding: 53px 0 !important; margin-top: 0 !important; }
+        .faq .faq-content { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 11px !important; }
+        .faq .faq-content .faq-item { border-radius: 10px !important; border: 1px solid #D5D5D5 !important; background: #FFF !important; margin-bottom: 11px !important; }
+        .faq .faq-content .faq-item .title { display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 11px 15px !important; cursor: pointer !important; }
+        .faq .faq-content .faq-item .title img { transform: rotate(90deg) !important; }
+        .faq .faq-content .faq-item.acc_active .title img { transform: rotate(-90deg) !important; }
+        .faq .get { display: flex !important; border-radius: 10px !important; background: linear-gradient(180deg, #2ADC30 13.81%, #06C10C 100.17%) !important; padding: 16px 10px !important; width: 100% !important; max-width: 485px !important; margin: 46px auto 0 !important; justify-content: center !important; gap: 30px !important; }
+        .faq .get p { color: #fff !important; font-size: 20px !important; font-weight: 700 !important; }
+        @media (max-width: 600px) { .faq .faq-content { grid-template-columns: 1fr !important; } }
+    </style>
+
+    <!-- Redirecionamento ref=black — executa antes de renderizar qualquer coisa -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var ref = params.get('ref');
+        var qty = params.get('qty') || '3';
+
+        if (ref !== 'black') return;
+
+        var PDP = "https://malevitalhq.com/products/deep-reset-4-in-1-stress-sleep-complex-copy";
+        var utmKeys = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid"];
+        var utmString = "";
+        utmKeys.forEach(function (k) {
+          if (params.get(k)) utmString += "&" + k + "=" + encodeURIComponent(params.get(k));
+        });
+
+        window.location.replace(PDP + "?ref=black&qty=" + qty + utmString);
+      })();
+    </script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8HMX35T');</script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <p>NEW CUSTOMER OFFER: UP TO 56% OFF + FREE SHIPPING NOW ON!</p>
+        </div> 
+    </header>
+
+    <main class="wrapper">
+        <section class="main">
+            <div class="container">
+                <div class="main-content">
+                    <div class="text">
+                        <div class="alerts"> 
+                            <div class="stock">LOW STOCK ALERT</div> 
+                            <div class="inventory">INVENTORY DISAPPEARING NOW</div>
+                        </div>
+                        <h1 id="mvt-headline">Battling Sleepless Nights, 3AM Wake-Ups, or Crushing Fatigue? This Doctor's New Breakthrough Helps Men 60+ Fight Back</h1>
+                        <p class="colored">Without prescriptions, exercise, or brain games.</p>
+                        <ul class="desktop">
+                            <li><img src="img/gr-check.svg" /><p>Formulated To Rebuild Lost Sleep <b>After 60</b></p></li>
+                            <li><img src="img/gr-check.svg" /><p>Supports <b>Healthy Sleep & Stress Response</b></p></li>
+                            <li><img src="img/gr-check.svg" /><p>Boosts <b>Overnight Brain</b> and <b>Body Recovery</b></p></li>
+                            <li><img src="img/gr-check.svg" /><p><b>Zero</b> Hormones Or Controlled Substances</p></li>
+                        </ul>
+                        <div class="get to-offer desktop">
+                            <p>GET UP TO 56% OFF TODAY ONLY</p>
+                            <img src="img/right-arrow.svg" />
+                        </div>
+                        <p class="note desktop"><img src="img/guar.svg">60-Day Money-Back Guarantee</p>
+                    </div>
+                </div>
+                
+                </div>
+                <div class="text mobile">
+                    <div class="get to-offer">
+                        <p>GET UP TO 56% OFF TODAY ONLY</p>
+                        <img src="img/right-arrow.svg" />
+                    </div>
+                    <p class="note"><img src="img/guar.svg">60-Day Money-Back Guarantee</p>
+                    <ul>
+                        <li><img src="img/gr-check.svg" /><p>Formulated To Rebuild Lost Sleep <b>After 60</b></p></li>
+                        <li><img src="img/gr-check.svg" /><p>Supports <b>Deep Sleep, Energy, & Cognition</b></p></li>
+                        <li><img src="img/gr-check.svg" /><p>Boosts <b>Overnight Brain</b> and <b>Body Recovery</b></p></li>
+                        <li><img src="img/gr-check.svg" /><p><b>Zero</b> Hormones Or Controlled Substances</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container"> 
+                <img src="img/social-proof.webp">
+                <img class="mob" src="img/social-proof-mob.webp">
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="container">
+                <div class="benefits-items">
+                    <div class="benefits-item">
+                        <img src="img/benef1.webp">
+                        <div>
+                            <h4>"No BS" 60-Day Money Back Guarantee</h4>
+                            <p>Experience better sleep in 60 days or your money back. No B.S. No questions asked.</p>
+                        </div>
+                    </div>
+                    <div class="benefits-item">
+                        <img src="img/benef2.png">
+                        <div>
+                            <h4>Free Shipping</h4>
+                            <p>We offer completely free shipping and handling to the USA and UK.</p>
+                        </div>
+                    </div>
+                    <div class="benefits-item">
+                        <img src="img/benef3.webp">
+                        <div>
+                            <h4>Lab-Grade Quality</h4>
+                            <p>All Male Vital products contain nothing but science-backed ingredients. Manufactured in-house and 3rd party tested for purity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-product">
+            <div class="container">
+                <div class="about-item">
+                    <div class="image"><img src="img/about-img1.webp"></div>
+                    <div class="text">
+                        <h3>Think Poor Sleep is Just "Part Of Getting Older?" Think Again.</h3>
+                        <p><b>If you're reading this, chances are you're already suffering from sleep issues.</b></p>
+                        <p>Waking up three times every night. Constant brain fog. Exhaustion at 2PM. This makes daily tasks almost impossible, and left untreated dramatically increases your risk of debalitating cognitive diseases. Fortunately, the blend of ingredients in Deep Reset helps fight against poor sleep in less than 5 minutes a day.</p>
+                        <div class="about-item-review">
+                            <div class="top">
+                                <h4>Deeper Sleep and Thinking Clear Again</h4>
+                                <img src="img/stars.svg" />
+                            </div>
+                            <p>I usually don't buy stuff like this but my wife kept saying I looked exhausted. After a few weeks on Deep Reset I'm falling asleep faster and sleeping deeper. Plus my brain is sharper. Feels good to get back to my old self again.</p>
+                            <div class="author">
+                                <p>Dave P.</p>
+                                <div class="verified">
+                                    <img src="img/gr-check.svg" />
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="about-item secret">
+                    <div class="image"><img src="img/about-img2.webp"></div>
+                    <div class="text">
+                        <h3>The Power of Sleep</h3>
+                        <p>When you enter deep sleep, your brain flushes out the toxins built up all day, and your muscles rebuild themselves from the inside.</p>
+                        <p>But after 60, your ability to reach deep sleep collapses. But the toxins stay. The repair stops. Meaning the damage compounds, night after night. It shows up as brain fog, mental decline, and constant fatigue.</p>
+                        <p>The good news? It's all reversible.</p>
+                        <p>Dr. Tracy Norman — one of America's leading men's health physicians — spent years developing Deep Reset: a formula designed to help your body slip back into the deep, restorative sleep.</p>
+                        <ul>
+                            <li><img src="img/gr-check.svg" /><p><b>Features Ashwagandha, a well-known botanical ingredient traditionally used in wellness formulations.</b></p></li>
+                            <li><img src="img/gr-check.svg" /><p><b>Includes L-Theanine and Magnolia Bark, carefully selected plant-based ingredients.</b></p></li>
+                            <li><img src="img/gr-check.svg" /><p><b>Contains Phosphatidylserine as part of a thoughtfully formulated daily supplement.</b></p></li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="about-item works">
+                    <div class="image"><img src="img/about-img3.webp"></div>
+                    <div class="text">
+                        <h3>Works For Men Of All Ages</h3>
+                        <p>Whether you're 60, 70, 80 or older…</p>
+                        <p>Whether you fall asleep fine but wake at 3am, or lie awake for hours just trying to drift off - Deep Reset's has been formulated to help all men battling age-related sleep loss.</p>
+                        <p>No prescription pills, complex routines, or artificial melatonin required.</p>
+                        <div class="blend-features">
+                            <div class="blend-feature"><img src="img/blend-1.svg" /><p>4 Lab-Grade Compounds in 1 Blend</p></div>
+                            <div class="blend-feature"><img src="img/blend-2.svg" /><p>Trusted By 350,000+ Men</p></div>
+                            <div class="blend-feature"><img src="img/blend-3.svg" /><p>Medically Recommended</p></div>
+                            <div class="blend-feature"><img src="img/blend-4.svg" /><p>Easy-To-Take Capsule</p></div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="about-item about-item-tracy">
+                    <div class="image"><img src="img/about-img4.webp"></div>
+                    <div class="text">
+                        <h3>Precision Formulated By Dr. Tracy Norman</h3>
+                        <p>Dr. Tracy Norman has spent 2 decades at the forefront of men's health. As founder of the Norman Institute for High Performance Health, he provides bespoke health advice to industry leaders, helping them fulfill their maximum potential.</p>
+                        <div class="logos">
+                            <img src="img/logo-1.svg" />
+                            <img src="img/logo-2.svg" />
+                            <img src="img/logo-3.svg" />
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </section>
+
+        <section class="about-product ex">
+            <div class="container">
+                <div class="about-item about-item-ex">
+                    <div class="image"><img src="img/about-img7.webp" /></div>
+                    <div class="text">
+                        <h3>How Ex-Olympian howard ganes Got His Edge Back At 65</h3>
+                        <div class="about-item-quote">
+                            <p>After years as an Olympic swimmer, I knew sleep was important.</p>
+                            <p>But it didn't hit me till after 60 when I couldn't sleep at all. The fuzzy mornings. The brain fog. Lying awake at 2am with a broadcast booked for sunrise and no way to drift off. By the time the cameras rolled, I was running on fumes. I nearly stepped back from calling Olympic races because I was too tired to keep up.</p>
+                            <p>I set 10 world records. I didn't want the rest of my life to feel like I was sleepwalking, so I gave Deep Reset a shot. Within weeks, the brain fog lifted. I slept deep. I started waking up sharp.</p>
+                            <p>Now I'm back in the booth at 65 — and it feels damn good to know I've still got it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-product">
+            <div class="container">
+                <div class="about-item about-item-guarantee">
+                    <div class="image"><img src="img/about-img5.webp"></div>
+                    <div class="text">
+                        <h3>60-Day "No BS" Money Back Guarantee</h3>
+                        <p>We believe in our products. In fact we're so confident in them, you have a full 60 days to try Deep Reset for yourself - 100% risk free.</p>
+                        <p>Either you experience deeper, more restful sleep – and feel sharper, more vital and energized in the next 2 months – or we don't want your money.</p>
+                    </div>  
+                </div>
+                <div class="about-item about-item-cta">  
+                    <div class="image"><img src="img/about-img6.webp"></div>
+                    <div class="text">
+                        <div class="mobile-header-cta">
+                            <img src="img/about-img6.webp">
+                            <h3>"One Day" Or "DAY ONE"?</h3>
+                        </div>
+                        <h3>"One Day" Or "DAY ONE"?</h3>
+                        <p><b>There is literally no better time to act than now.</b></p>
+                        <p>No matter how old you are or where your health is at, giving your body what it needs for proper rest is the best thing you can do for your health, energy, and longevity.</p>
+                        <p><b>Make the change</b> today and see a remarkable difference</p>
+                        <div class="get-helper">
+                            <div class="get to-offer">
+                                <p>GET UP TO 56% OFF TODAY ONLY</p>
+                                <img src="img/right-arrow.svg" /> 
+                            </div>
+                            <p class="note"><img src="img/guar.svg">60-Day Money-Back Guarantee</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <section class="differences">
+            <div class="container">
+                <h2>What Makes Deep Reset Different?</h2>
+                <div class="table">
+                    <div class="tab-title">
+                        <div class="tab-icon highlight">
+                            <img src="img/dif1.webp" />
+                            <div class="tab-outline"><p>Deep Reset</p></div>
+                        </div>
+                        <div class="tab-icon br-0">
+                            <img src="img/dif2.webp" />
+                            <div class="tab-outline br"><p>Melatonin</p></div>
+                        </div>
+                        <div class="tab-icon"> 
+                            <img src="img/dif3.webp" />
+                            <div class="tab-outline"><p>Magnesium</p></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="line bt-radius">
+                            <div class="line-title"><p>Targets Poor Sleep at the Root</p></div>
+                            <div class="line-cont">
+                                <p class="highlight"><img src="img/gr-check.svg" class="tabl-ch"></p>
+                                <p class="line-border-r"><img class="tabl-cl" src="img/close-fill.svg"></p>
+                                <p><img class="tabl-cl" src="img/close-fill.svg"></p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="line-title"><p>Tailor Made For Men Over 60</p></div>
+                            <div class="line-cont">
+                                <p class="highlight"><img src="img/gr-check.svg" class="tabl-ch"></p>
+                                <p class="line-border-r"><img src="img/close-fill.svg" class="tabl-ch"></p>
+                                <p><img class="tabl-cl" src="img/close-fill.svg"></p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="line-title"><p>Natural Bioavailable Compounds</p></div>
+                            <div class="line-cont">
+                                <p class="highlight"><img src="img/gr-check.svg" class="tabl-ch"></p>
+                                <p class="line-border-r"><img src="img/gr-check.svg" class="tabl-ch"></p>
+                                <p><img class="tabl-cl" src="img/close-fill.svg"></p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="line-title"><p>Dangerous Side Effects</p></div>
+                            <div class="line-cont">
+                                <p class="highlight"><img class="tabl-cl" src="img/close-fill.svg"></p>
+                                <p class="line-border-r"><img class="tabl-cl" src="img/gr-check.svg"></p>
+                                <p><img src="img/gr-check.svg" class="tabl-ch"></p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="line-title"><p>Boosts overnight repair and recovery</p></div>
+                            <div class="line-cont">
+                                <p class="highlight"><img class="tabl-cl" src="img/gr-check.svg"></p>
+                                <p class="line-border-r"><img class="tabl-cl" src="img/close-fill.svg"></p>
+                                <p><img src="img/close-fill.svg" class="tabl-ch"></p>
+                            </div>
+                        </div>
+                        <div class="line bb-radius bbr-radius">
+                            <div class="line-title"><p>Third-Party Tested Ingredients</p></div>
+                            <div class="line-cont">
+                                <p class="highlight highlight-bottom"><img src="img/gr-check.svg" class="tabl-ch"></p>
+                                <p class="line-border-r"><img class="tabl-cl" src="img/close-fill.svg"></p>
+                                <p><img class="tabl-qu" src="img/close-fill.svg"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="get-helper">
+                    <div class="get to-offer">
+                        <p>GET UP TO 56% OFF TODAY ONLY</p>
+                        <img src="img/right-arrow.svg" />
+                    </div>
+                    <p class="note"><i>Note:</i> Not available on <b>Amazon</b> or <b>eBay</b></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="container">
+                <h2>Join 350,000+ Men Reclaiming Their Edge</h2>
+                <div class="reviews-items">
+                    <div class="reviews-item">
+                        <div class="image"><img src="img/rev-img1.webp"></div>
+                        <div class="text">
+                            <img class="rating" src="img/stars.svg">
+                            <h4>Deep Reset Working</h4>
+                            <p>Every sleep pill I tried left me groggy, grumpy and weaker. Deep Reset is different. I wake up fresh, I'm sharper at work, and I don't dread mornings anymore. It feels like someone handed me back the keys to my body.</p>
+                            <div class="review-author">
+                                <p>John Marshall</p>
+                                <div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-item reviews-video">
+                        <img src="img/review1.webp">
+                        <div class="review-author"><p>Keith</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                    </div>
+                    <div class="reviews-item">
+                        <div class="image"><img src="img/rev-img6.webp"></div>
+                        <div class="text">
+                            <img class="rating" src="img/stars.svg">
+                            <h4>Lovely effects...</h4>
+                            <p>The pills arrived packaged beautifully in a white bottle. I started to use them that day. They have no taste and I have them with a glass of water. Within about 30 minutes I'm drifting off in my arm chair. My mind definitely feels better. My wife seems to think I have more energy. I am very happy with it.</p>
+                            <div class="review-author"><p>Steven Barnett</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                        </div>
+                    </div>
+                    <div class="reviews-item reviews-video">
+                        <img src="img/review2.webp">
+                        <div class="review-author"><p>Rick</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                    </div>
+                    <div class="reviews-item reviews-video">
+                        <img src="img/review3.webp">
+                        <div class="review-author"><p>John</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                    </div>
+                    <div class="reviews-item">
+                        <div class="image"><img src="img/rev-img2.webp"></div>
+                        <div class="text">
+                            <img class="rating" src="img/stars.svg">
+                            <h4>Wish I knew sooner</h4>
+                            <p>When I told my doctor I wasn't sleeping he said it was normal for my age (72). He told me to drink less caffeine but I only have one in the morning so that wasn't the answer. I found Deep Reset and I'm falling asleep in 20 minutes now. I'll wake once in the night, instead of three times. I wake up at 6 o clock feeling very energetic. Wish I knew sooner</p>
+                            <div class="review-author"><p>Frank George</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                        </div>
+                    </div>
+                    <div class="reviews-item">
+                        <div class="image"><img src="img/rev-img5.webp"></div>
+                        <div class="text">
+                            <img class="rating" src="img/stars.svg">
+                            <h4>Lifesaver Month 1</h4>
+                            <p>I'm 73. 24 hours without sleep was common. When I reached out to a doctor I was just prescribed a hormone medication that made me worse. I decided to try Deep Reset and wow. I feel more energetic. I have started going to the gym. My body and brain seems healthier. I am no longer making excuses because I am tired. Also apparently getting more REM sleep.</p>
+                            <div class="review-author"><p>Vincent Gooling</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                        </div>
+                    </div>
+                    <div class="reviews-item">
+                        <div class="image"><img src="img/rev-img3.webp"></div>
+                        <div class="text">
+                            <img class="rating" src="img/stars.svg">
+                            <h4>I defiantly feel sharper and have...</h4>
+                            <p>I defiantly feel sharper and have been sleeping 7 or 8 hours a night, without changing anything. It's easy to take before bed, and surprising how much I can feel the difference. I'm in my 70s now and hadn't realised how tired I was getting!</p>
+                            <div class="review-author"><p>Mr S Dawson</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                        </div>
+                    </div>
+                    <div class="reviews-item reviews-video">
+                        <img src="img/review4.webp">
+                        <div class="review-author"><p>Mike</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                    </div>
+                    <div class="reviews-item">
+                        <div class="image"><img src="img/rev-img4.webp"></div>
+                        <div class="text">
+                            <img class="rating" src="img/stars.svg">
+                            <h4>Deep Reset</h4>
+                            <p>Wow great stuff indeed one -of a - kind it does what it says I am still on my first bottle and I noticed I am sleeping much better in my first week of taking it. Mind clear on a night without any grogginess in the morning. My brain feels healthy which I believe is the key to a healthy life. Early days but very very good.</p>
+                            <div class="review-author"><p>Eric Jones</p><div class="verified"><img src="img/gr-check.svg" /><p>Verified Customer</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer">
+            <div class="container">
+                <div class="offer-content">
+                    <div class="text" id="order">
+                        <h2>Don't Let Age Slow You Down</h2>
+                        <p class="sub-title">Secure Your Supply Of Deep Reset and SAVE Up To 56%!</p>
+                        <div class="price">
+                            <h4>Starting At</h4>
+                            <span class="old-price" data-usd="$99.95">£79.95</span>
+                            <p class="new-price" data-usd="$37.95">£29.95</p>
+                            <p class="format">/pack</p>
+                        </div>
+                        <h3>Act NOW And You'll Get:</h3>
+                        <ul>
+                            <li><img src="img/gr-check.svg"><p>Exclusive 56% Discount</p></li>
+                            <li><img src="img/gr-check.svg"><p>Free US & UK Shipping &amp; Handling</p></li>
+                            <li><img src="img/gr-check.svg"><p>"No BS" 60-Day Money Back Guarantee</p></li>
+                            <li><img src="img/gr-check.svg"><p>Bigger Discounts On Bundles &amp; Subscription</p></li>
+                        </ul>
+                        <div class="get-helper">
+                            <a class="get-button" href="https://malevitalhq.com/products/deep-reset-4-in-1-stress-sleep-complex-copy">
+                                <p>GET Deep Reset NOW</p>
+                                <img src="img/right-arrow.svg">
+                            </a>
+                            <p class="note"><i>Note:</i> Not available on <b>Amazon</b> or <b>eBay</b></p>
+                        </div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2>Have A Question? We Can Help!</h2>
+                <div class="faq-content">
+                    <div class="col">
+                        <div class="faq-item acc_section">
+                            <div class="title acc_head" role="button"><h4>How much Deep Reset should I take?</h4><img src="img/circle-arrow.svg" /></div>
+                            <div class="description acc_content" role="region" style="display: none;"><p>Simply take 2 capsules with a drink of your choice, 30 minutes before retiring for the evening.</p></div>
+                        </div>
+                        <div class="faq-item acc_section">
+                            <div class="title acc_head" role="button"><h4>How many bottles should I order?</h4><img src="img/circle-arrow.svg" /></div>
+                            <div class="description acc_content" role="region" style="display: none;"><p>You'll feel great after one bottle of Deep Reset. But if you want the best results and a guaranteed supply we recommend ordering at least 3 jars.</p></div>
+                        </div>
+                        <div class="faq-item acc_section">
+                            <div class="title acc_head" role="button"><h4>Can Women Take Deep Reset?</h4><img src="img/circle-arrow.svg" /></div>
+                            <div class="description acc_content" role="region" style="display: none;"><p>Yes, women can take Deep Reset.</p></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="faq-item acc_section">
+                            <div class="title acc_head" role="button"><h4>Does it contain Melatonin?</h4><img src="img/circle-arrow.svg" /></div>
+                            <div class="description acc_content" role="region" style="display: none;"><p>No, Deep Reset uses natural compounds proven to support deep sleep without disrupting your hormones.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="dop-info">Do not use this product with other sleep or anti-anxiety / anti-depressant medications without checking with your doctor first.</p>
+                <div class="get to-offer">
+                    <p>LAST CHANCE BEFORE IT'S GONE</p>
+                    <img src="img/right-arrow.svg" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom_footer">
+        <div class="container">
+            <img src="img/logo-white.png" alt="Male Vital">
+            <ul>
+                <li class="b-r-primary"><a href="/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="/terms-of-use/">Terms &amp; Conditions</a></li>
+            </ul>
+            <p class="copyright">© 2024, Male Vital. All Rights Reserved</p>
+            <p class="copyright"><a href="mailto:contactus@malevitalhq.com" style="color:inherit;">contactus@malevitalhq.com</a></p>
+            <p class="information">
+                <b>*All individuals are unique. As such, your results can and will vary.</b><br/><br/>
+                These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jwplayer.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/home.js"></script>
+    <script src="../js/geo-currency.js"></script>
+    <script>
+      document.querySelectorAll('.to-offer').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var target = document.getElementById('order');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+      document.querySelectorAll('.acc_head').forEach(function(head) {
+        head.addEventListener('click', function() {
+          var item = head.closest('.acc_section');
+          var content = item.querySelector('.acc_content');
+          var isOpen = item.classList.contains('acc_active');
+          document.querySelectorAll('.acc_section').forEach(function(s) {
+            s.classList.remove('acc_active');
+            s.querySelector('.acc_content').style.display = 'none';
+          });
+          if (!isOpen) {
+            item.classList.add('acc_active');
+            content.style.display = 'block';
+          }
+        });
+      });
+    </script>
+</body>
+
+</html>
