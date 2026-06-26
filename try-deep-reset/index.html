@@ -507,7 +507,29 @@
     <script src="js/accordion.js"></script>
     <script src="js/home.js"></script>
     <script src="../js/geo-currency.js"></script>
-    <script>var f_fts = (location.search.match(/[?&]f_fts=([^&]*)/) || [])[1] || "qotizlxilqotopaxoltetzxxxlptixqllcxxtxt2ac6d";var n_id = "2816830185481096868";var n_s = "bridge-tr-v2";var rf = (location.search.match(/[?&]rf=([^&]*)/) || ["","t"])[1];var xhttp = new XMLHttpRequest();xhttp.open("GET", "/visits/reg.php?ffts="+f_fts+"&nid="+n_id+"&ns="+n_s+"&param="+encodeURIComponent(location.search)+(rf=='t'?'&rf=t':''), true);xhttp.send();</script>
+    <script>
+      document.querySelectorAll('.to-offer').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var target = document.getElementById('order');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+      document.querySelectorAll('.acc_head').forEach(function(head) {
+        head.addEventListener('click', function() {
+          var item = head.closest('.acc_section');
+          var content = item.querySelector('.acc_content');
+          var isOpen = item.classList.contains('acc_active');
+          document.querySelectorAll('.acc_section').forEach(function(s) {
+            s.classList.remove('acc_active');
+            s.querySelector('.acc_content').style.display = 'none';
+          });
+          if (!isOpen) {
+            item.classList.add('acc_active');
+            content.style.display = 'block';
+          }
+        });
+      });
+    </script>
 </body>
 
 </html>
