@@ -32,8 +32,8 @@
       var ref = params.get('ref');
       var qty = params.get('qty') || '5';
       var urls = {
-        "3": "https://malevitalhq.com/cart/45945807274063:3?discount=BUY2GET1FREE&currency=GBP&country=GB",
-        "5": "https://malevitalhq.com/cart/45945807274063:5?discount=BUY3GET2FREE&currency=GBP&country=GB"
+        "3": "https://malevitalhq.com/cart/45945807274063:3?discount=BUY2GET1&currency=GBP&country=GB",
+        "5": "https://malevitalhq.com/cart/45945807274063:5?discount=BUY3GET2&currency=GBP&country=GB"
       };
       if (ref === 'black') {
         window.location.replace(urls[qty] || urls["5"]);
