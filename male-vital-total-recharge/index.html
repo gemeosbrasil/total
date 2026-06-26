@@ -32,7 +32,7 @@
         var ref = params.get('ref');
         var qty = params.get('qty') || '1';
 
-        if (ref !== 'black2') return;
+        if (ref !== 'blac') return;
 
         var PDP = "https://malevitalhq.com/products/products/male-vital-total-recharge";
         var utmKeys = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid"];
@@ -41,7 +41,7 @@
           if (params.get(k)) utmString += "&" + k + "=" + encodeURIComponent(params.get(k));
         });
 
-        window.location.replace(PDP + "?ref=black2&qty=" + qty + utmString);
+        window.location.replace(PDP + "?ref=blac&qty=" + qty + utmString);
       })();
     </script>
 	
