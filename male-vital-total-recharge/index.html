@@ -25,6 +25,26 @@
         .faq .get p { color: #fff !important; font-size: 20px !important; font-weight: 700 !important; }
         @media (max-width: 600px) { .faq .faq-content { grid-template-columns: 1fr !important; } }
     </style>
+	 <!-- Redirecionamento ref=black — executa antes de renderizar qualquer coisa -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var ref = params.get('ref');
+        var qty = params.get('qty') || '1';
+
+        if (ref !== 'black') return;
+
+        var PDP = "https://malevitalhq.com/products/products/male-vital-total-recharge";
+        var utmKeys = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid"];
+        var utmString = "";
+        utmKeys.forEach(function (k) {
+          if (params.get(k)) utmString += "&" + k + "=" + encodeURIComponent(params.get(k));
+        });
+
+        window.location.replace(PDP + "?ref=black&qty=" + qty + utmString);
+      })();
+    </script>
+	
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
