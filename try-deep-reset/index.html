@@ -23,9 +23,40 @@
         .faq .get { display: flex !important; border-radius: 10px !important; background: linear-gradient(180deg, #2ADC30 13.81%, #06C10C 100.17%) !important; padding: 16px 10px !important; width: 100% !important; max-width: 485px !important; margin: 46px auto 0 !important; justify-content: center !important; gap: 30px !important; }
         .faq .get p { color: #fff !important; font-size: 20px !important; font-weight: 700 !important; }
         @media (max-width: 600px) { .faq .faq-content { grid-template-columns: 1fr !important; } }
+
+        /* Overlay */
+        #redirect-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 99999;
+        }
     </style>
 
-    <!-- Redirecionamento ref=black — executa antes de renderizar qualquer coisa -->
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1305199918460644');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1305199918460644&ev=PageView&noscript=1"/>
+    </noscript>
+</head>
+
+<body>
+
+    <!-- Overlay + redirect — logo após <body> para o DOM existir -->
+    <div id="redirect-overlay"></div>
     <script>
       (function () {
         var params = new URLSearchParams(window.location.search);
@@ -34,6 +65,8 @@
 
         if (ref !== 'black') return;
 
+        document.getElementById('redirect-overlay').style.display = 'block';
+
         var PDP = "https://malevitalhq.com/products/deep-reset-4-in-1-stress-sleep-complex-copy";
         var utmKeys = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid"];
         var utmString = "";
@@ -41,18 +74,12 @@
           if (params.get(k)) utmString += "&" + k + "=" + encodeURIComponent(params.get(k));
         });
 
-        window.location.replace(PDP + "?ref=black&qty=" + qty + utmString);
+        setTimeout(function() {
+          window.location.replace(PDP + "?ref=black&qty=" + qty + utmString);
+        }, 900);
       })();
     </script>
 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P8HMX35T');</script>
-</head>
-
-<body>
     <header class="header">
         <div class="container">
             <p>NEW CUSTOMER OFFER: UP TO 56% OFF + FREE SHIPPING NOW ON!</p>
@@ -83,7 +110,6 @@
                         <p class="note desktop"><img src="img/guar.svg">60-Day Money-Back Guarantee</p>
                     </div>
                 </div>
-                
                 </div>
                 <div class="text mobile">
                     <div class="get to-offer">
